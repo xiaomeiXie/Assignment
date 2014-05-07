@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Excuseed</title>
+</head>
+<script type="text/javascript">
+window.onload = function(){
+	getWords();
+}
+function getWords(){
+	
+	var neededWords = [];
+	//answers given by user;
+	var answeredWords = [];
+	 neededWords = document.getElementsByTagName('span');
+	 alert(neededWords.length);
+	 
+	// var firstWord = words[0].innerHTML;
+	//alert(words.length);
+	 for (var i = 0; i< neededWords.length; i++){
+		 //ask for a word for each needed word and add it to neededWords array
+		 //get the type of the word we want from the game
+		 //alert the title of each span
+		 var neededWord = neededWords[i].title;
+		 //alert(neededWord);
+		 // get word from user
+		 var answeredWord = prompt("Give me a " + neededWord);
+		 answeredWords.push(answeredWord);
+		 //fill in spaces of spans with user answer;
+		 neededWords[i].innerHTML = answeredWord;
+		 }
+		 // check if lists are equal lengt
+	
+	}
+</script>
+<body>
+<h1>MadLibs</h1>
+<h2>Date:<span title="date" >date</span></h2>
+<p>Please excuse <span title="name">name</span>, who is far too <span title="adjective">adjective</span> to attend <span title="noun"> noun </span> class </p>
+<dl>
+   <dt>Signed:</dt>
+   <dd><span title="signed">signed</span></dd>
+</dl>
+</body>
+</html>

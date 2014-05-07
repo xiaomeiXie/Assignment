@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>05/02Homework:Object</title>
+</head>
+<script type="text/javascript">
+window.onload = function(){
+	document.getElementById('play').onclick = function(){
+		//what to do when button is clicked
+		getWords();
+		}
+}
+function getWords(){
+	
+	var neededWords = [];
+	
+	var answerObj = {};
+	neededWords = document.getElementsByTagName('span');
+    
+	 for (var i = 0; i< neededWords.length; i++){
+		 //ask for a word for each needed word and add it to neededWords array
+		 //get the type of the word we want from the game
+		 //alert the title of each span
+		 var keyWord = neededWords[i].title;
+		 // get word from user
+		 if (keyWord === "date"){
+			 var date = new Date();
+			 //break;
+			 var day = date.getDay();
+			 rr = date.getDate();
+			 var month = date.getMonth();
+			 day = day.toString();
+			 month = month.toString();
+			 var year = date.getFullYear();
+			 year = year.toString();
+			 switch(day) {
+				 case '0': 
+				      day = "Sunday";
+					  break;
+				 case '1':
+				       day = "Monday";
+					   break;
+				 case '2':
+				       day = "Tuesday";
+					   break;
+				case '3':
+				       day = "Wednesday";
+					   break;
+				case '4':
+				       day = "Thurday";
+					   break;		
+				case '5':
+				       day = "Friday";
+					   break;		
+				case '6':
+				       day = "Saturday";
+					   break;		
+				 default: 
+				       day = "Other";
+					  break;
+					  
+				 }
+			switch(month) {
+				 
+				 case '1':
+				       month = "January";
+					   break;
+				 case '2':
+				       month = "February";
+					   break;
+				case '3':
+				       month = "March";
+					   break;
+				case '4':
+				      month = "April";
+					   break;		
+				case '5':
+				       month = "May";
+					   break;		
+				case '6':
+				       month = "June";
+					   break;		
+				 default: 
+				       month = "Other";
+					  break;
+					  
+				 }	 
+			 answerObj[keyWord] = day + ", " + month + " " + rr + ", " + year;
+			 neededWords[i].innerHTML = answerObj[keyWord];
+			 } else{
+		 var neededWord = prompt("Give me a " + keyWord);
+		 answerObj[keyWord] = neededWord;
+		 
+		neededWords[i].innerHTML = answerObj[keyWord];
+		
+		   }
+		 }
+		/* for (var key in answerObj) 
+{
+    if (answerObj.hasOwnProperty(key))
+    {
+	   // key.innerHTML = answerObj[key];
+   alert("Object: " + key + " = " + answerObj[key]);
+    }
+}*/
+	
+		 
+	}
+</script>
+<body>
+<h1>MadLibs</h1>
+<h2>Date:<span title="date" ><font color=blue> date </font></span></h2>
+<p>Please excuse <span title="name"><font color=blue> name </font></span>, who is far too <span title="adjective"><font color=blue> adjective </font></span> to attend <span title="noun"><font color=blue> noun </font></span> class </p>
+<dl>
+   <dt>Signed:</dt>
+   <dd><span title="signed"><font color=blue> signed </font></span></dd>
+</dl>
+<button id="play">Play Game!</button>
+</body>
+</html>

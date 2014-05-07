@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<style type="text/css">.required {font-style:italic;color:#FF0000;font-weight:bold;}
+body {
+		background-image:url('');
+background-color:#cccccc;
+background-repeat: no-repeat;
+ background-attachment:fixed;
+margin:60px;
+height: 80%;
+
+}
+#circle1 {
+	width: 100px;
+	height: 100px;
+	background-image:url('cat1.jpg');
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	transition: 1s;
+
+	
+}
+#circle2 {
+	width: 100px;
+	height: 100px;
+	background-image:url('cat2.jpg');
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+}
+button.css3button {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+    padding: 10px 20px;
+    background: -moz-linear-gradient(
+   	 top,
+   	 #42ff42 0%,
+   	 #146600);
+    background: -webkit-gradient(
+   	 linear, left top, left bottom,
+   	 from(#42ff42),
+   	 to(#146600));
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid #134201;
+    -moz-box-shadow:
+   	 0px 1px 3px rgba(000,000,000,0.9),
+   	 inset 0px 0px 2px rgba(255,255,255,1);
+    -webkit-box-shadow:
+   	 0px 1px 3px rgba(000,000,000,0.9),
+   	 inset 0px 0px 2px rgba(255,255,255,1);
+    box-shadow:
+   	 0px 1px 3px rgba(000,000,000,0.5),
+   	 inset 0px 0px 2px rgba(255,255,255,1);
+    text-shadow:
+   	 0px -1px 0px rgba(001,000,000,0.8),
+   	 0px 1px 0px rgba(255,255,255,0.3);
+   	 padding: 5px 20px 5px 20px;
+}
+button.css3button:hover {
+  background: #2980b9;
+  text-decoration: none;
+}
+
+</style>
+
+<head>
+<meta charset="utf-8">
+<title>4/23 Homework Xiaomei Xie</title>
+</head>
+
+<body>
+<h1 onmouseover="makeYellow()" onmouseout="makePink()"><a href="#">Web 150 (Intro to JavaScript)</h1>
+
+<button  type="button" name="" value="" class="css3button" onclick="showCat();">Click to view ...</button>
+
+<button  type="button" name="" value="" class="css3button" onclick="showOther();">Click to view another...</button>
+
+<button  type="button" name="" value="" class="css3button" onclick="showClear();">Click to Clear</button>
+<div>
+
+</div>
+
+<script type="text/javascript">
+    var makeYellow = function () {
+        document.getElementsByTagName('h1')[0].style.background = "yellow";
+    }
+    var makePink= function () {
+        var pink = document.getElementsByTagName('h1')[0]
+        pink.style.background = "pink";
+    }
+    
+    var showCat = function () {
+		alert("hello cute cat");
+        document.getElementsByTagName('div')[0].innerHTML = "<img src='cat.jpg' alt = 'cat1' /> ";
+    }
+	 var showOther = function () {
+		 alert("hello grey cat");
+        document.getElementsByTagName('div')[0].innerHTML = "<img src='cat2.jpg' alt = 'cat2' />";
+    }
+    var showClear = function () {
+		alert("clear picture");
+        document.getElementsByTagName('div')[0].innerHTML = "";
+    }
+	
+</script>
+
+
+</body>
+</html>

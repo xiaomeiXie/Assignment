@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+<script type="text/javascript">
+
+window.onload= function(){
+
+//var aCount = document.getElementsByTagName('a');
+//alert(aCount.length);
+//var aCount = document.getElementsByTagName('a')[0];
+//alert(aCount.href);
+//var firstLink = document.getElementById('firstLink');
+//alert(firstLink.href);
+//get the tages
+// go through each a tag turn the background style to yellow
+var aCount = document.getElementsByTagName('a');
+for (i =0 ; i< aCount.length; i++){
+	aCount[i].style.background = "yellow";
+	
+	}
+ // var h1s = document.getElementsByTagName('h1');
+  //console.log(h1s[i]);
+  var counter = document.getElementById('counter');
+    counter.onclick = function() {
+	  alert ("You clicked me!");
+	  }
+	  var superButton = document.getElementById('firstLink');
+	  superButton.onclick = function() {
+		  alert("you are super!");
+		  return false;
+		  
+		  }
+}
+</script>
+<body>
+<h1 id="headline">World Wide Web</h1>
+
+<p>The WorldWideWeb (W3) is a wide-area 
+<a id="firstLink" HREF="WhatIs.html"> hypermedia</a> information retrieval initiative aiming to give universal access to a large universe of documents.</p>
+<dl>
+<dt>
+<a id="secondLink" HREF="../DataSources/Top.html">What's out there?</a>
+<DD> Pointers to the world's online information,
+<a id="thirdLink" HREF="../DataSources/bySubject/Overview.html">Subjects?</a>
+<dt>
+<a id="forthLink" HREF="Help.html">Help</a>
+<DD>on the browser you are using 
+</dl>
+<button id="counter" >Count the a tags</button>
+
+
+</body>
+</html>

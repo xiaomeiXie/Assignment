@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+<script type="text/javascript">
+
+var BirdMessage;
+var lcBirdMessage;
+BirdMessage = prompt("What are you favorite Bird?<br /> You can choice from : duck, goose, owl,woodpecker,emu,ostrich,penguin or others");
+lcBirdMessage = BirdMessage.toLowerCase();
+alert (lcBirdmessage);
+if (lcBirdMessage == "duck" || BirdMessage == "goose"){
+	alert("This bird can fly just very low.");
+}
+if (BirdMessage == "owl" || BirdMessage == "woodpecker"){
+	alert("This bird can fly very high!");
+}
+if (BirdMessage == "emu" || BirdMessage == "ostrich"){
+	alert("This bird have wings and two legs; run fast, but can't fly!");
+}
+if (BirdMessage == "penguin" ){
+alert("This bird have wings; can't fly, but can swimming!");
+}else{
+alert("Sorry,I don't know this bird too much.");
+}
+
+
+</script>
+<body>
+</body>
+</html>
