@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Validation 01</title>
+    <head>
+        <meta charset="utf-8">
+        <title>HTML Template</title>
+
+        <style type="text/css">
+        <!--
+		.error{
+			color:red
+			}
+		.hidden{
+			display:none
+			}	
+        -->
+        </style>
+
+        <script type="text/javascript">
+
+            window.onload = function() {
+                //actions to do after html loads
+             document.getElementById("contact-form").onsubmit = validateContact;
+		    }
+      function validateContact(){
+		  var firstName = document.getElementById("first-name").value;
+		  var fNameError = document.getElementById("error-first-name");
+		  //if nothing in box show a mean message,and stay here
+		  // if name go to success page
+		  if (firstName === ""){
+			  fNameError.className = "error";
+			  return false;
+			  }else{
+				  fNameError.className = "hidden";
+				  return true;
+				  }
+		  }
+        </script>
+
+    </head>
+    <body>
+<form id="contact-form" action="success.html">
+<label for="first-name">First Name:
+   <input name="first-name" id="first-name" type="text"></label>
+   <span id="error-first-name" class="error hidden">* blank</span>
+   <button name="submit" type="submit">sumit</button>
+
+</form>
+
+    </body>
+</html>
+

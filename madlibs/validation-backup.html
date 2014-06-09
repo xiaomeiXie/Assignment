@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Homework 05/14 Validation</title>
+<style>
+<!--
+   .hidden{
+	 display: none;  
+	   }
+	   .center{
+		text-align: center;   
+		 }
+		button.color:hover {
+  background: #2980b9;
+  text-decoration: none;
+  
+}
+.big {
+	font-size: 200%;
+	}
+	.color {
+	color: red;
+	}
+	.rmcolor {
+	color: black;
+	}
+	
+-->
+</style>
+</head>
+<script type="text/javascript">
+window.onload = function(){
+	document.getElementById('play').onclick = function(){
+		//what to do when button is clicked
+		getWords();
+		}
+		// first way to change class
+		//document.getElementById('gameBoard').className = "hidden";
+		// use RegExp to add and remove class
+		document.getElementById('gameBoard').className += " hidden";
+		//document.getElementById('gameBoard').className =document.getElementById('gameBoard').className + " hidden";
+		document.getElementById('color').onclick = function(){
+		//what to do when button is clicked
+		changeColor();
+		}
+		document.getElementById('target').onclick = function(){
+		//what to do when button is clicked
+		changeSize();
+		}
+		document.getElementById('rmcolor').onclick = function(){
+		//what to do when button is clicked
+		removeColor();
+		}
+		//document.getElementById('removecolor').onclick = function(){
+		//what to do when button is clicked
+		//removeColor();
+		//}
+}
+function changeSize(){
+	document.getElementById('gameBoard').className = " big";
+	}
+function changeColor(){
+	
+	document.getElementById('gameBoard').className = " color";
+	}
+function removeColor(){
+	
+	document.getElementById('gameBoard').className = " rmcolor";
+	}			
+function getWords(){
+	
+	var neededWords = [];
+	
+	var answerObj = {};
+	neededWords = document.getElementsByTagName('span');
+    
+	 for (var i = 0; i< neededWords.length; i++){
+		 //ask for a word for each needed word and add it to neededWords array
+		 //get the type of the word we want from the game
+		 //alert the title of each span
+		 var keyWord = neededWords[i].title;
+		 // get word from user
+		 if (keyWord === "date"){
+			 var date = new Date();
+			 //break;
+			 var day = date.getDay();
+			 rr = date.getDate();
+			 var month = date.getMonth();
+			 day = day.toString();
+			 month = month.toString();
+			 var year = date.getFullYear();
+			 year = year.toString();
+			 switch(day) {
+				 case '0': 
+				      day = "Sunday";
+					  break;
+				 case '1':
+				       day = "Monday";
+					   break;
+				 case '2':
+				       day = "Tuesday";
+					   break;
+				case '3':
+				       day = "Wednesday";
+					   break;
+				case '4':
+				       day = "Thurday";
+					   break;		
+				case '5':
+				       day = "Friday";
+					   break;		
+				case '6':
+				       day = "Saturday";
+					   break;		
+				 default: 
+				       day = "Other";
+					  break;
+					  
+				 }
+			switch(month) {
+				 
+				 case '0':
+				       month = "January";
+					   break;
+				 case '1':
+				       month = "February";
+					   break;
+				case '2':
+				       month = "March";
+					   break;
+				case '3':
+				      month = "April";
+					   break;		
+				case '4':
+				       month = "May";
+					   break;		
+				case '5':
+				       month = "June";
+					   break;
+				case '6':
+				       month = "July";
+					   break;
+				case '7':
+				       month = "August";
+					   break;
+				case '8':
+				       month = "September";
+					   break;	
+			    case '9':
+				       month = "October";
+					   break;	
+			    case '10':
+				       month = "November";
+					   break;	
+				case '11':
+				       month = "December";
+					   break;					
+				 default: 
+				       month = "Other";
+					  break;
+					  
+				 }	 
+			 answerObj[keyWord] =  day + ", " + month + " " + rr + ", " + year;
+			 neededWords[i].innerHTML = answerObj[keyWord];
+			 } else{
+				  var neededWord = prompt("Give me a " + keyWord);
+					  answerObj[keyWord] = neededWord;
+					  neededWords[i].innerHTML = answerObj[keyWord];
+					 if (keyWord === "signed"){//evaluate the "signed", can't be blank
+					
+						 if (neededWord === ""){
+					 
+								neededWord = prompt("Field can not be blank, Who are you? "); 
+								answerObj[keyWord] = neededWord;
+								neededWords[i].innerHTML = answerObj[keyWord];
+								}
+					 	}
+				 
+			 }
+					
+		   
+	   }
+  
+   if ( document.getElementById('gameBoard').className.match(/(?:^|\s)hidden(?!\S)/ ) ) 
+    {
+	   // do something;
+	  document.getElementById('gameBoard').className = document.getElementById('gameBoard').className.replace(/(?:^|\s)hidden(?!\S)/g, "" );
+	   }
+	
+		 
+	}
+</script>
+<body>
+<h1>MadLibs</h1>
+<img src="images/Sundae.jpg" width=800 heigh="250" ><br />
+<table align="center"><tr>
+<td>
+<button id="play" class="css3button">Play Game!</button></td>
+<td>
+<button id="target" class="css3button">Change size!</button></td>
+<td>
+<button id="color" class="css3button">Change color!</button></td>
+<td>
+<button id="rmcolor" class="css3button">Remove color!</button></td>
+</tr></table>
+<div id="gameBoard" class= "center">
+<h2>Date:<span title="date" ><font color=blue> date </font></span></h2>
+<p>Please excuse <span title="name"><font color=blue> name </font></span>, who is far too <span title="adjective"><font color=blue> adjective </font></span> to attend <span title="noun"><font color=blue> noun </font></span> class </p>
+<dl>
+   <dt>Signed:</dt>
+   <dd><span title="signed"><font color=blue> signed </font></span></dd>
+</dl>
+</div>
+<img src="images/back.gif"  alt="new" /><a href="index.html">Go Back!</a>
+
+</div>
+</body>
+</html>

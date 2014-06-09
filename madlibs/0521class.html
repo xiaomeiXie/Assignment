@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <title>HTML Template</title>
+
+        <style type="text/css">
+        <!--
+        .prettify{
+	        color:red
+	        
+	        }
+        -->
+        </style>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+      
+        <script type="text/javascript">
+           $(document).ready(function() {
+	           $("#button01").click(doStuff);   
+	        });
+	        
+	        function doStuff(){
+		   // $("#message").html("A stupid list ");
+		        
+		     $("#message").toggle();  
+		      //$("#fruits li").slideUp(2000);
+		      //$("#fruits li").slideToggle(1000);
+		     // $("#fruits li").addClass("prettify");
+		 //$("#fruits li").toggleClass("prettify");
+		//$("#fruits").append("<li>dates</li>"); // play with prepend()
+		  // $("#fruits").prepend("<li>dates</li>"); 
+		        }
+
+        </script>
+
+    </head>
+    <body>
+  <button id="button01">Do stuff</button>
+  <h1 id="message">An Awesome List</h1>
+  <h2>Fruits</h2>
+  <ul id="fruits">
+  <li>apple</li>
+  <li>berries</li>
+  <li>cherries</li>
+  </ul>
+  
+  
+    </body>
+</html>

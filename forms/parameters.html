@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Parameters</title>
+
+        <style type="text/css">
+        <!--
+        -->
+        </style>
+
+        <script type="text/javascript">
+
+            window.onload = function() {
+                //actions to do after html loads
+				document.getElementById("button01").onclick = step01;
+				document.getElementById("button02").onclick = step02;
+				document.getElementById("button03").onclick = clearstep;
+            }
+			function step01()
+			{  changeTitle("This is the First Parameters")
+				 
+				}
+			function step02()
+			{
+				 changeTitle("This is the Second Parameters")
+				}
+			function clearstep()
+			{
+				  changeTitle("")
+				}
+			function changeTitle(titleText)
+			{//do stuff with titleText
+				var titleH2 = document.getElementById("title");
+				titleH2.innerHTML = titleText;
+				}
+
+        </script>
+
+    </head>
+    <body>
+  <h1>Parameters</h1>
+  <button id="button01" class="css3button">Part1</button>
+  <button id="button02" class="css3button">Part2</button>
+  <button id="button03" class="css3button">Clear</button>
+  <h2 id ="title"></h2>
+    </body>
+</html>
+

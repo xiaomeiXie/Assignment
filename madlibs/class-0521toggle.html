@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <title>HTML Template</title>
+
+        <style type="text/css">
+        <!--
+        .prettify{
+	        color:red
+	        
+	        }
+        -->
+        </style>
+
+        <script type="text/javascript" src="js/jQuery-1.11.1.js"></script>
+        <script type="text/javascript">
+          $(document).ready(function() {
+	           $("#button01").click(showHideList);   
+	          
+	        });
+   function showHideList(){
+	   //check if list is visible, if yes hide, if no show.
+	   if( $("#fruits li").is( ":visible" )){
+		   //hide them
+		   $("#fruits li").hide();
+		   $("#button01").html("show");
+		   }else{//show them
+		     $("#fruits li").show();
+			   $("#button01").html("hide");
+			   
+			   }
+	   
+	   }
+	        	        
+        </script>
+
+    </head>
+    <body>
+    <button id="button01">hide the list</button>
+ 
+  <h1 id="message">An Awesome List</h1>
+  <h2>Fruits</h2>
+  <ul id="fruits">
+  <li>apple</li>
+  <li>berries</li>
+  <li>cherries</li>
+  </ul>
+  
+  
+    </body>
+</html>

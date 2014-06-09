@@ -1,0 +1,44 @@
+<!doctype HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery ui</title>
+    <!-- adapted from http://info.cern.ch/hypertext/WWW/TheProject.html as an exercise in DOM manipulation -->
+
+    <link rel="stylesheet"  type="text/css" href="css/style.css" />
+
+    <!-- load jQuery from a CDN -->
+    <script type="text/javascript"  src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+    <!-- use the following script for local development -->
+    <script src="jquery-1.11.1.js"></script>
+    <script type="text/javascript">
+   		$(document).ready(function() {
+	   		$('#hello').html("hello world!");
+	   		$('#target').load('message.txt');
+	   		$('#button01').click(myAjax);
+  	});
+  	
+  	function myAjax() {
+		   	alert("starting ajax");
+		   		$.getJSON( "http://api.flickr.com/services/feeds/photos_public.gne?tags=cat&tagmode=any&format=json&jsoncallback=?", function(data) { alert(JSON.stringify(data, null, 2 ));} ).done(function(data){
+		   		//take data and print to screen
+		   		$.each(data.items, function(i,item) {
+		   		//do something with each image
+		   		$("<img/>").attr("src", item.media.m).appendTo("#images");
+		   		if ( i ==3 ) return false;
+		   		});
+	   		});
+		   	}
+    
+    </script>
+</head>
+<body>
+<h1 id = "hello"></h1>
+<p id ="target"></p>
+<button id="button01">Click me</button>
+<div id="images">
+</div>
+   
+</body>
+</html>

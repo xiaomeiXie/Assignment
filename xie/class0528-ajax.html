@@ -1,0 +1,49 @@
+<!doctype HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX 01</title>
+    <!-- adapted from http://info.cern.ch/hypertext/WWW/TheProject.html as an exercise in DOM manipulation -->
+
+    <link rel="stylesheet" href="www-style.css">
+
+    <!-- load jQuery from a CDN -->
+    <script type="text/javascript"  src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+    <!-- use the following script for local development -->
+    <script src="jquery-1.11.1.js"></script>
+    <script type="text/javascript">
+    var target,request;
+    
+	$(document).ready(function(){
+		target = document.getElementById('target');
+	$('#button01').click( doRequest); 
+		});
+	function doRequest(){
+		request = new XMLHttpRequest();
+		request.open("GET", "data.txt", true);
+		request.send( null );
+		request.onreadystatechange = showStatus;
+		}
+	//request has request.readystate and request.status, among other properties		
+	function showStatus(){
+		
+		if( request.readyState === 4 ){//response available
+			
+			if( request.status === 200 ){//ok,authorized response
+				target.innerHTML += "<br />success!";
+				
+				}
+			}
+		
+		}	
+		
+</script>
+</head>
+<body>
+<div id="target">
+<button id="button01">Make Request</button>
+</div>
+   
+</body>
+</html>
