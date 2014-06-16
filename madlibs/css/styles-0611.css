@@ -1,0 +1,17 @@
+.hidden {
+    display: none;
+}
+
+.center {
+    text-align: center;
+}
+
+.color {
+    background-color: yellow;
+}
+
+.obscure {
+    color: green;
+    background-color: lightblue;
+}
+

@@ -1,0 +1,1 @@
+var adjectives = ["abandoned", "able", "babyish", "bad", "calculating", "calm", "candid"];
